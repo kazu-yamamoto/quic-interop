@@ -36,4 +36,9 @@ Mode: RTT0
   max_packet_size is specified, Crypto fragments in Initial are
   flipped. I need to implement reassembly.
 
-- quantum: TBD
+- The quantum test sometime fails. This is because that Linux
+  "connect(2)" behaves differently macOS "connect(2)". macOS
+  "connect(2)" fails if the addr-port is already used. But Linux
+  "connect(2)" always success for UDP, sigh. So, on Linux, two sockets
+  are created and only the latter can receive packets. To fix this
+  issue, I introduced a fixed-size quantum table based on PSQ.
