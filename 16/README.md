@@ -32,7 +32,7 @@ Mode: FullHandshake
   the `cryptnite` package does not provide API to specify
   `counter`. We should fix it.
 
-- quant is unique. If `max_packet_size` is not specifies, it tries
+- quant is unique. If `max_packet_size` is not specified, it tries
   PMTU discovery with 2020 bytes. quant resends packets according to
   the result. Surprisingly, a Short packet comes just after
   Initial. Since Short comes before Handshake, Haskell client falls
