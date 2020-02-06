@@ -1,8 +1,8 @@
 ## 16th interop
 
 - #haskell channel: mew.org:4433 for retry, h3-25/hq-25, VHRZSQ (probably DC).
-- The test scripts are a toy at this moment. "-Q" has not implemented yet.
-  The following is the example of "VHDRZS":
+- The test scripts are a toy at this moment.
+  The following is the example of "VHDRZSQ":
 
 ```
 % haskell.sh | grep Mode
@@ -13,6 +13,7 @@ Mode: FullHandshake
 Mode: PreSharedKey
 Mode: FullHandshake
 Mode: RTT0
+Mode: FullHandshake
 ```
 
 ## Things learned
@@ -42,3 +43,6 @@ Mode: RTT0
   "connect(2)" always success for UDP, sigh. So, on Linux, two sockets
   are created and only the latter can receive packets. To fix this
   issue, I introduced a fixed-size quantum table based on PSQ.
+
+- Before sending a "pong" ACK, the peer packet number of Ping should
+  be registered.
