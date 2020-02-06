@@ -22,27 +22,29 @@ Mode: FullHandshake
   retry. So, Haskell server does not send ACK for retried 0RTT.
 
 - Haskell server sometime stacked. It sends back a retry but cannot go
-  further. This is because "accept" is called in the main thread. If
-  the handshake in "accept" stacks, everything stacks. This experience
-  results in new APIs: runQUICClient and runQUICServer.
+  further. This is because `accept` is called in the main thread. If
+  the handshake in `accept` stacks, everything stacks. This experience
+  results in new APIs: `runQUICClient` and
+  `runQUICServer`. `Connection` is automatically closed. It is ensured
+  that server actions are executed in child threads.
 
 - gQUIC prefers ChaCha20. When I tried to implement it, I noticed that
-  the "cryptnite" package does not provide API to specify
-  "counter". We should fix it.
+  the `cryptnite` package does not provide API to specify
+  `counter`. We should fix it.
 
-- quant is unique. If max_packet_size is not specifies, it tries PMTU
-  discovery with 2020 bytes. quant resends packets according to the
-  result. Surprisingly, Short comes just after Initial. Since Short
-  comes before Handshake, Haskell client fails into deadlock. Even if
-  max_packet_size is specified, Crypto fragments in Initial are
-  flipped. I need to implement reassembly.
+- quant is unique. If `max_packet_size` is not specifies, it tries
+  PMTU discovery with 2020 bytes. quant resends packets according to
+  the result. Surprisingly, a Short packet comes just after
+  Initial. Since Short comes before Handshake, Haskell client falls
+  into deadlock. Even if `max_packet_size` is specified, Crypto
+  fragments in Initial are reordered. I need to implement reassembly.
 
 - The quantum test sometime fails. This is because that Linux
-  "connect(2)" behaves differently macOS "connect(2)". macOS
-  "connect(2)" fails if the addr-port is already used. But Linux
-  "connect(2)" always success for UDP, sigh. So, on Linux, two sockets
+  `connect(2)` behaves differently macOS `connect(2)`. macOS
+  `connect(2)` fails if the addr-port is already used. But Linux
+  `connect(2)` always success for UDP, sigh. So, on Linux, two sockets
   are created and only the latter can receive packets. To fix this
   issue, I introduced a fixed-size quantum table based on PSQ.
 
-- Before sending a "pong" ACK, the peer packet number of Ping should
+- Before sending a Pong ACK, the peer packet number of Ping should
   be registered.
