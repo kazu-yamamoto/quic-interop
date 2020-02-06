@@ -21,7 +21,7 @@ Mode: FullHandshake
 
 - ngtcp2 sends HANDSHAKE_DONE then CRYPTO for NewSessionTicket. So, if
   the TLS handshake thread is killed immediately on HANDSHAKE_DONE,
-  NewSessionTicket cannot be processed, resulting failures for
+  NewSessionTicket cannot be processed, resulting in failures for
   resumption and 0RTT. So, on HANDSHAKE_DONE, a new thread is spawned
   and it waits for a while then kills the TLS handshake thread.
 
