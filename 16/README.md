@@ -1,5 +1,6 @@
 ## 16th interop
 
+- [16th Implementation Draft](https://github.com/quicwg/base-drafts/wiki/16th-Implementation-Draft)
 - #haskell channel: mew.org:4433 for retry, h3-25/hq-25, VHRZSQ (probably DC).
 - The test scripts are a toy at this moment.
   The following is the example of "VHDRZSQ":
@@ -17,6 +18,12 @@ Mode: FullHandshake
 ```
 
 ## Things learned
+
+- ngtcp2 sends HANDSHAKE_DONE then CRYPTO for NewSessionTicket. So, if
+  the TLS handshake thread is killed immediately on HANDSHAKE_DONE,
+  NewSessionTicket cannot be processed, resulting failures for
+  resumption and 0RTT. So, on HANDSHAKE_DONE, a new thread is spawned
+  and it waits for a while then kills the TLS handshake thread.
 
 - I misunderstood that a client should discard 0RTT if a server asks
   retry. So, Haskell server does not send ACK for retried 0RTT.
