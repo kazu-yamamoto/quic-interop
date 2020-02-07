@@ -1,5 +1,4 @@
-# VHDRZS
-# Q fails
+# VHDRZSQ
 ./client -d test.privateoctopus.com 4433 -V
 ./client -d test.privateoctopus.com 4433
 ./client -d test.privateoctopus.com 4433 -R
