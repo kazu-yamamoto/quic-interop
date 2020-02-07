@@ -44,7 +44,8 @@ Mode: FullHandshake
   the result. Surprisingly, a Short packet comes just after
   Initial. Since Short comes before Handshake, Haskell client falls
   into deadlock. Even if `max_packet_size` is specified, Crypto
-  fragments in Initial are reordered. I need to implement reassembly.
+  fragments in Initial are reordered. This motivated me to implement
+  reassembly.
 
 - The quantum test sometime fails. This is because that Linux
   `connect(2)` behaves differently macOS `connect(2)`. macOS
