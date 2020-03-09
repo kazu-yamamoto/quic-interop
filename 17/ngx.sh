@@ -4,3 +4,5 @@
 ./client -d cloudflare-quic.com 443 -R
 ./client -d cloudflare-quic.com 443 -Z
 ./client -d cloudflare-quic.com 443 -Q
+./client -d cloudflare-quic.com 443 -M
+./client -d cloudflare-quic.com 443 -B
