@@ -6,4 +6,6 @@
 ./client -d quic.tech 8444 -S
 ./client -d quic.tech 4433 -Q
 ./client -d quic.tech 4433 -M
+./client -d quic.tech 4433 -N
 ./client -d quic.tech 4433 -B
+./client -d quic.tech 4433 -A
