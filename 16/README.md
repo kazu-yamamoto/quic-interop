@@ -6,7 +6,6 @@
   The following is the example of "VHDRZSQ":
 
 ```
-% haskell.sh | grep Mode
 % sh haskell.sh| grep Mode
 Mode: FullHandshake
 Mode: FullHandshake
