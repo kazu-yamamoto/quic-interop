@@ -20,6 +20,7 @@ Result: (A) address mobility ... OK
 
 ## Things learned
 
+- If the ordering of Finished and Stream is flipped, a race between the transport and an appliction happens.
 - There were no consensus on criteria for `MBA`. The following is the result of discussion:
 
 ### M: Server CID change
