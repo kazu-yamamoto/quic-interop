@@ -21,6 +21,8 @@ Result: (A) address mobility ... OK
 ## Things learned
 
 - If the ordering of Finished and Stream is flipped, a race between the transport and an appliction happens.
+- To make the test of NAT rebinding correct, the old socket should be closed quickly.
+- Haskell server should support `/{number}` for `MBA` so that the big data gives enough time to change anything.
 - There were no consensus on criteria for `MBA`. The following is the result of discussion:
 
 ### M: Server CID change
