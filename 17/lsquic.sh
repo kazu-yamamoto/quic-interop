@@ -1,4 +1,4 @@
-# VHDRZSQ MNBA
+# VHDRSQ MNBA
 ./client -d http3-test.litespeedtech.com 4433 -V
 ./client -d http3-test.litespeedtech.com 4433
 ./client -d http3-test.litespeedtech.com 4433 -R

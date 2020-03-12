@@ -1,4 +1,4 @@
-# VHDRZSQ B
+# VHDRZSQ
 ./client -d quic.tech 4433 -V
 ./client -d quic.tech 4433
 ./client -d quic.tech 4433 -R

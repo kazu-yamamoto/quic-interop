@@ -8,4 +8,3 @@
 ./client -d quic.rocks 4433 -M
 ./client -d quic.rocks 4433 -B
 ./client -d quic.rocks 4433 -A
-
