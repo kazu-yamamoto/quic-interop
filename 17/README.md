@@ -20,6 +20,7 @@ Result: (A) address mobility ... OK
 
 ## Things learned
 
+- Logs should be recorded by a dedicated thread to keep right ordering and to avoid the append conflict.
 - If the ordering of Finished and Stream is flipped, a race between the transport and an appliction happens.
 - To make the test of NAT rebinding correct, the old socket should be closed quickly.
 - Haskell server should support `/{number}` for `MBA` so that the big data gives enough time to change anything.
