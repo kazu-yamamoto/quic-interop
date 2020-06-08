@@ -4,6 +4,21 @@
 - #haskell channel: mew.org:4433 (h3-28), mew.org:4433/num/<nnnn> for `T` (h3-28), mew.org:4434 for retry (h3-28 and hq-28), VHRZSQDC MBAT 3 https://mew.org/log/ for logs
 - Test script usage:
 
+```
+% sh haskell.sh | grep Resu
+Result: (V) version negotiation  ... OK
+Result: (H) handshake ... OK
+Result: (D) stream data ... OK
+Result: (3) H3 transaction ... OK
+Result: (R) TLS resumption ... OK
+Result: (Z) 0-RTT ... OK
+Result: (S) retry ... OK
+Result: (Q) quantum ... OK
+Result: (M) change server CID ... OK
+Result: (N) change client CID ... OK
+Result: (B) NAT rebinding ... OK
+Result: (A) address mobility ... OK
+```
 
 ## Performance tuning
 
