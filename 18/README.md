@@ -1,7 +1,7 @@
 ## 18th interop
 
 - [18th Implementation Draft](https://github.com/quicwg/base-drafts/wiki/18th-Implementation-Draft)
-- #haskell channel: mew.org:4433 (h3-28), mew.org:4433/num/<nnnn> for `T` (h3-28), mew.org:4434 for retry (h3-28 and hq-28), VHRZSQDC MBAT 3 https://mew.org/log/ for logs
+- #haskell channel: mew.org:4433 (h3-28), mew.org:4433/num/`nnnn` for `T` (h3-28), mew.org:4434 for retry (h3-28 and hq-28), `VHRZSQDC MBAT 3`, https://mew.org/log/ for logs
 - Test script usage:
 
 ```

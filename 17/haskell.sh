@@ -3,6 +3,7 @@
 ./client -d mew.org 4433
 ./client -d mew.org 4433 -R
 ./client -d mew.org 4433 -Z
+./client -d mew.org 4434 -S
 ./client -d mew.org 4433 -Q
 ./client -d mew.org 4433 -M
 ./client -d mew.org 4433 -N
