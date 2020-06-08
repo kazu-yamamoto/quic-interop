@@ -14,7 +14,7 @@
 
 Old:
 
-```
+```haskell
 aes128gcmEncrypt :: Key -> Nonce -> PlainText -> AddDat -> [CipherText]
 aes128gcmEncrypt (Key key) (Nonce nonce) plaintext (AddDat ad) =
     [ciphertext,tag]
@@ -27,7 +27,7 @@ aes128gcmEncrypt (Key key) (Nonce nonce) plaintext (AddDat ad) =
 
 New:
 
-```
+```haskell
 aes128gcmEncrypt :: Key -> (Nonce -> PlainText -> AddDat -> [CipherText])
 aes128gcmEncrypt (Key key) =
     let aes = throwCryptoError (cipherInit key) :: AES128
