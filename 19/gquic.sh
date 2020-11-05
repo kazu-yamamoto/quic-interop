@@ -1,4 +1,5 @@
 # VHDRQ B
+set -x
 # cannot do 0RTT
 ./client -d quic.rocks 4433 -V
 ./client -d quic.rocks 4433
